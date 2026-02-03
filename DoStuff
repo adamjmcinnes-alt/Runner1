@@ -1,0 +1,18 @@
+.github/workflows/test.yml
+name: Autonomous Agent Test
+
+on:
+  schedule:
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
+
+jobs:
+  agent:
+    runs-on: self-hosted
+    steps:
+      - name: Agent heartbeat
+        run: |
+          echo "Hello, I am an autonomous agent"
+          whoami
+          hostname
+          date
